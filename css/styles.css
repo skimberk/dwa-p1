@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'azo-sans-web', sans-serif;
 }
 
 .container {
@@ -12,10 +12,14 @@ body {
 
 .header {
   position: relative;
-  min-height: 500px;
+  padding: 64px 0;
   background: url('../img/triangles.svg') right bottom no-repeat;
   background-size: cover;
   color: #fff;
+  font-size: 48px;
+  font-weight: 200;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .header:before {
@@ -26,4 +30,13 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(8, 64, 100, 0.5);
+}
+
+.photo {
+  margin: 0 auto 32px;
+  width: 128px;
+  height: 128px;
+  background: #ecf0f1;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
