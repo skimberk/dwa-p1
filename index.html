@@ -22,6 +22,7 @@
 </head>
 <body>
   <div class="header">
+    <div class="background"></div>
     <div class="container">
       <div class="photo"></div>
       <div class="typekit">Sebastian Kimberk</div>
@@ -48,8 +49,64 @@
       <p>I use a Mac. More specifically, a Retina Macbook. It's light, portable, and the battery lasts a long time. Plus, it works great for web development.</p>
 
       <h2>Anything else?</h2>
-      <p>I ensure that anything I make looks pretty, since ugly websites annoy me...</p>
+      <p>I ensure that anything I make looks pretty, since ugly websites annoy me... Also, be sure to check out the cool parallax effect on the header background.</p>
     </div>
   </div>
+
+  <script>
+  var throttle = function(func, delay) {
+    var timeout = -1;
+    var allow = true;
+    var lastArgs = null;
+    return function() {
+      if(allow) {
+        allow = false;
+
+        timeout = setTimeout(function() {
+          allow = true;
+
+          if(lastArgs) {
+            func.apply(null, lastArgs);
+            lastArgs = null;
+          }
+        }, delay);
+
+        func.apply(null, arguments);
+      }
+      else {
+        lastArgs = arguments;
+      }
+    };
+  };
+
+  var supportedTransform = (function() {
+    var prefixes = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' ');
+    for(var i = 0; i < prefixes.length; i++) {
+      if(document.createElement('div').style[prefixes[i]] !== undefined) {
+        return prefixes[i];
+      }
+    }
+    return false;
+  })();
+
+  if(supportedTransform) {
+    var lastScroll = 0;
+    var backgroundElem = document.getElementsByClassName('background')[0];
+
+    window.addEventListener('scroll', throttle(function() {
+      requestAnimationFrame(function() {
+        var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+        if(scrollTop !== lastScroll) {
+          lastScroll = scrollTop;
+
+          if(scrollTop >= 0) {
+            backgroundElem.style.webkitTransform = 'translateY(' + ((scrollTop * 0.5) >> 0) + 'px) translateZ(0)';
+          }
+        }
+      });
+    }, 15), false);
+  }
+  </script>
 </body>
 </html>
