@@ -59,3 +59,8 @@ p {
 .body :last-child {
   margin-bottom: 0;
 }
+
+.inactive {
+  opacity: 0.3;
+  pointer-events: none;
+}
