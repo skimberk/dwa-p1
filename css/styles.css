@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  position: relative;
+  min-height: 500px;
+  background: url('../img/triangles.svg') right bottom no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.header:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(8, 64, 100, 0.5);
+}
