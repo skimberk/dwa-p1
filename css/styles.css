@@ -1,11 +1,17 @@
 body {
   margin: 0;
   font-family: 'azo-sans-web', sans-serif;
+  font-weight: 300;
+  font-size: 21px;
+}
+
+p {
+  line-height: 1.476;
 }
 
 .container {
   position: relative;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -39,4 +45,17 @@ body {
   background: #ecf0f1;
   border-radius: 2px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.body {
+  position: relative;
+  padding: 64px 0;
+}
+
+.body :first-child {
+  margin-top: 0;
+}
+
+.body :last-child {
+  margin-bottom: 0;
 }
