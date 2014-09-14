@@ -42,9 +42,20 @@ p {
   margin: 0 auto 32px;
   width: 128px;
   height: 128px;
-  background: #ecf0f1;
   border-radius: 2px;
+  overflow: hidden;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  background-image: url('../img/me.jpg');
+  background-size: 128px 128px;
+}
+
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .photo {
+    background-image: url('../img/me@2x.jpg');
+  }
 }
 
 .body {
