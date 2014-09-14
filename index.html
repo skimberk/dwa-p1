@@ -10,17 +10,24 @@
   <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
   <link rel="stylesheet" href="./css/styles.css">
 
-  <script src="//use.typekit.net/qge1gwu.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'qge1gwu',
+        scriptTimeout: 3000
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
 </head>
 <body>
   <div class="header">
     <div class="container">
       <div class="photo"></div>
-      Sebastian Kimberk
+      <div class="typekit">Sebastian Kimberk</div>
     </div>
   </div>
-  <div class="body">
+  <div class="body typekit">
     <div class="container">
       <h2>Projects</h2>
       <p>Project 1: <a href="http://p1.dwa.sebastian.io/">View website</a> or <a href="https://github.com/skimberk1/dwa-p1">Fork on Github</a>.</p>
